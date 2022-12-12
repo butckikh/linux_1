@@ -1,0 +1,101 @@
+420  docker --help
+  421  sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+  422  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  423  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  424  sudo apt update
+  425  sudo apt install docker -y
+  426  sudo apt install docker.io -y
+  427  history
+  428  sudo docker run -it ubuntu
+ 431  docker run -it --name Ubuntu1804 ubuntu:18.04 /bin/bash
+  432  docker run hello-world
+  433  sudo docker run hello-world
+  434  sudo docker run --name Ubuntu1804 ubuntu:18.04
+  435  sudo docker attach Ubuntu1804
+  436  sudo docker rm Ubuntu1804
+  437  sudo docker run -it --name Ubuntu1804 ubuntu:18.04 /bin/bash
+  438  sudo docker run -it -e "FOO=bar" --name Ubuntu1804_2 ubuntu:18.04 /bin/bash
+  439  echo $FOO
+  440  sudo echo $FOO
+  441  sudo docker run -it -e "FOO=bar" --name Ubuntu1804_2 ubuntu:18.04 /bin/bash
+  442  sudo echo $FOO
+  443  docker run -it -v "~/test_docker:/mnt" --name Ubuntu1804_3 ubuntu:18.04 /bin/bash
+  444  sudo docker run -it -v "~/test_docker:/mnt" --name Ubuntu1804_3 ubuntu:18.04 /bin/bash
+  445  rm
+  446  sudo docker rm 
+  447  sudo docker rm Ubuntu1804
+  448  sudo docker run -it --name Ubuntu1804 ubuntu:18.04 /bin/bash
+  449  sudo docker run -it -e "FOO=bar" --name Ubuntu1804_2 ubuntu:18.04 /bin/bash
+  450  docker run -it -e "FOO=bar" --name Ubuntu1804_2 ubuntu:18.04 /bin/bash
+  451  sudo docker run -it -e "FOO=bar" --name Ubuntu1804_2 ubuntu:18.04 /bin/bash
+  452  sudo docker rm Ubuntu1804_2
+  453  docker run -it --name Ubuntu1804 ubuntu:18.04 /bin/bash
+  454  sudo docker run -it --name Ubuntu1804 ubuntu:18.04 /bin/bash
+  455  sudo docker rm Ubuntu1804
+  456  sudo docker run -it --name Ubuntu1804 ubuntu:18.04 /bin/bash
+  457  sudo docker run -it -e "FOO=bar" --name Ubuntu1804_2 ubuntu:18.04 /bin/bash
+  458  sudo docker run -it -v "~/test_docker:/mnt" --name Ubuntu1804_3 ubuntu:18.04 /bin/bash
+  459  docker run -it -v "~/test_docker:/mnt" --name Ubuntu1804_3 ubuntu:18.04 /bin/bash
+  460  sudo docker run -it -v "~/test_docker:/mnt" --name Ubuntu1804_3 ubuntu:18.04 /bin/bash
+  461  docker volume list
+  462  sudo docker volume list
+  463  sudo docker run --name Nginx -p 8080:80 -d nginx
+  464  sudo docker run -v mysql_volume:/var/lib/mysql --name MySQL -e MYSQL_ROOT_PASSWORD=passwd -d mysql:8.0
+  465  docker run --name PhpMyAdmin -d --link MySQL:db -p 8080:80 phpmyadmin/phpmyadmin
+  466  sudo docker run --name PhpMyAdmin -d --link MySQL:db -p 8080:80 phpmyadmin/phpmyadmin
+  467  sudo docker network create -d bridge docker_network
+  468  sudo docker network list
+  469  sudo docker stop MySQL
+  470  sudo docker stop PhpMyAdmin
+  471  sudo docker rm MySQL
+  472  sudo docker rm PhpMyadmin
+  473  sudo docker run -v mysql_volume:/var/lib/mysql --network docker_network --name MySQL -e MYSQL_ROOT_PASSWORD=passwd -d mysql:8.0
+  474  sudo docker run --name PhpMyAdmin -d --network docker_network -e PMA_HOST=MySQL -p 8080:80 phpmyadmin/phpmyadmin
+  475  docker run -v mysql_volume:/var/lib/mysql --network docker_network --name MySQL -e MYSQL_ROOT_PASSWORD=passwd -d mysql:8.0
+  476  sudo docker volume list
+  477  sudo docker rm VOLUME NAME
+  478  sudo docker rm mysql_volume
+  479  history
+  480  systemctl status docker
+  481  docker run hello-world
+  482  sudo docker run hello-world
+  483  mkdir -p nginx-image; cd nginx-image/
+  484  touch Dockerfile
+  485  nano Dockerfile
+  486  RUN mkdir -p /run/php && chown -R www-data:www-data /var/www/html && chown -R www-data:www-data /run/php
+  487  nano Dockerfile
+  488  nano default
+  489  nano supervisord.conf
+  490  nano start.sh
+  491  chmod +x start.sh
+  492  tree .
+  493  docker build -t nginx-image
+  494  docker image ls
+  495  docker ls
+  496  docker image ls
+  497  sudo docker image ls
+  498  mkdir -p /webroot
+  499  cd
+  500  mkdir -p /webroot
+  501  sudo mkdir -p /webroot
+  502  webroot ll
+  503  webroot ls
+  504* cd docker run -d -v /webroot:/var/www/html -p 8080:80 --name test-container nginx-image
+  505  docker run -d -v /webroot:/var/www/html -p 8080:80 --name test-container nginx-image
+  506  sudo docker run -d -v /webroot:/var/www/html -p 8080:80 --name test-container nginx-image
+  507  cd webroot
+  508  sudo mkdir -p /webroot
+  509  mkdir -p webroot; cd webroot/
+  510  docker run -d -v /webroot:/var/www/html -p 8080:80 --name test-container nginx-image
+  511  sudo docker run -d -v /webroot:/var/www/html -p 8080:80 --name test-container nginx-image
+  512  echo '<?php phpinfo(); ?>' > /webroot/info.php
+  513  sudo echo '<?php phpinfo(); ?>' > /webroot/info.php
+  514  sudo echo '<?php phpinfo(); ?>' > /webroot/info.php -y
+  515  cd root
+  516  sudo i
+  517  sudo -i
+  518  cd
+  519  docker network list
+  520  sudo docker network list
+  521  history
+butckikh@butckikh-VirtualBox:~$ 
